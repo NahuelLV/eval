@@ -1,0 +1,163 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int ejercicio;
+    printf("Ingrese el ejercicio que quiere hacer:");
+    scanf("%d", &ejercicio);
+    switch(ejercicio){
+        
+        case 1:
+        char tipo;              //desde esta linea a la 20 declaro variables y pido los datos.
+        int tamano;
+        float cant;
+        float dinero;
+        printf("Ingrese el tipo(en mayusculas):");
+        scanf("%s", &tipo);
+        printf("Ingrese el tamaño:");
+        scanf("%d", &tamano);
+        printf("Ingrese su cantidad(en kilos):");
+        scanf("%f", &cant);
+        if(tipo == 'A'){                    //desde esta linea hasta la 28, pregunto si es tipo A y hago los calculos segun el tamaño.Ademas de mostrar los resultados.
+            if(tamano == 1){
+                dinero = cant * 200.0;
+                printf("Su ganancia sera de:%.2f", dinero);     
+            }else if(tamano == 2){
+                dinero = cant * 300.0;
+                printf("Su ganancia sera de:%.2f", dinero);
+            }
+        }else if(tipo == 'B'){              //desde esta linea hasta la 36, pregunto si es tipo B y hago los calculos segun el tamaño.Ademas de mostrar los resultados.
+            if(tamano == 1){
+                dinero = cant * 300.0;
+                printf("Su ganancia sera de:%.2f", dinero);
+            }else if(tamano == 2){
+                dinero = cant * 500.0;
+                printf("Su ganancia sera de:%.2f", dinero);
+            }
+        } break;
+        
+        case 2:
+    int base;   // Declaración de variables
+    int potencia;
+    int result = 1; 
+    printf("Ingrese el numero a potenciar:");
+    scanf("%d", &base);
+    printf("Ingrese el potenciador:");
+    scanf("%d", &potencia); 
+    for(int i = 0; i < potencia; i++) { 
+        result *= base;
+    }
+    printf("Su resultado es: %d", result); // Imprimir el resultado
+    break;
+            
+            case 3:
+            float radio;                  //desde esta linea a la 57 declaro variables y pido los datos.
+            float PI = 3.14;
+            printf("Ingrese el radio:");
+            scanf("%f", &radio);
+            float longitud = 2*PI*radio;            //hago los caculos para sacar la longitud.
+            float circunferencia = PI*(radio*radio);         //hago los caculos para sacar la circunferencia.
+            float volumen = (4/3)*PI*(radio*radio*radio);        //hago los caculos para sacar el volumen.
+            printf("El valor de la longitud de la circunferencia es:%.2f\n", longitud);        //desde esta linea a la 63 muestro los resultados.
+            printf("El valor del area de la circunferencia es:%.2f\n", circunferencia);
+            printf("El valor del volumen de la esfera es:%.2f\n", volumen);
+            break;
+            
+            case 4:
+            int edad;                    //desde esta linea a la 75 declaro variables y pido los datos.
+            char genero;
+            int aportes;
+            printf("Ingrese su genero(M o F):");
+            scanf("%s", &genero);
+            printf("Ingrese su edad:");
+            scanf("%d", &edad);
+            printf("Ingrese sus años de aporte:");
+            scanf("%d", &aportes);
+            if(genero == 'M'){                  //desde esta linea hasta la 87, si es hombre, pregunto los datos necesarios para saber si puede o no jubilarse. Si no puede hago los calculos necesarios para decirle que le falta.
+                if(edad >= 66){
+                    if(aportes >= 21){
+                        printf("Felicidades, ya puede jubilarse hombre");
+                    }else if(aportes <= 20){
+                        int z = 21 - aportes;
+                        printf("Le faltan %d años de aportes hombre", z);
+                }
+            }else if(edad <= 65){               //desde esta linea hasta la 99, si es mujer, pregunto los datos necesarios para saber si puede o no jubilarse. Si no puede hago los calculos necesarios para decirle que le falta.
+                int a = 66 - edad;
+                 printf("Le faltan %d años para la edad minima de jubilacion hombre", a);
+            }
+            }else if(genero == 'F'){
+                if(edad >= 61){
+                    if(aportes >= 21){
+                        printf("Felicidades, ya puede jubilarse mujer");
+                    }else if(aportes <= 20){
+                        int z = 21 - aportes;
+                        printf("Le faltan %d años de aportes mujer", z);
+                }
+            }else if(edad <= 60){
+                int a = 61 - edad;
+                 printf("Le faltan %d años para la edad minima de jubilacion mujer", a);
+            }
+            } break;
+            
+           case 5: 
+    int hijos;          //desde esta linea hasta la 108 declaro variables y pido los datos al usuario.
+    printf("Ingrese cuantos hijos tiene:"); 
+    scanf("%d", &hijos);
+    float sub;
+    float s;
+    float subT;
+    int hijosES = 0;
+    if(hijos <= 2) { //desde esta linea hasta la 150 pregunto la cantidad de hijos y si tienen en edad escolar, tambien hago los calculos para dacirle al usuario el subsidio total que recibe.
+        sub = 700 * hijos;
+        printf("Su subsidio por hijos es de: %.2f", sub);
+        for(int i = 0; i < hijos; i++) {
+            int e;
+            printf("\nIngrese la edad de sus hijos:");
+            scanf("%d", &e);
+            if(e >= 6 && e <= 18) {
+                hijosES++;
+            }
+        }
+        s = hijosES * 1000; // Se calcula el subsidio por hijos en edad escolar
+        printf("Su subsidio por hijos en edad escolar es de: %.2f\n", s);
+        subT = sub + s;
+        printf("Su subsidio total por hijos es de: %.2f", subT);
+    }
+    else if(hijos >= 3 && hijos <= 5) {
+        sub = 800 * hijos;
+        printf("Su subsidio por hijos es de: %.2f", sub);
+        for(int i = 0; i < hijos; i++) {
+            int e;
+            printf("\nIngrese la edad de sus hijos:");
+            scanf("%d", &e);
+            if(e >= 6 && e <= 18) {
+                hijosES++;
+            }
+        }
+        s = hijosES * 1000; // Se calcula el subsidio por hijos en edad escolar
+        printf("Su subsidio por hijos en edad escolar es de: %.2f\n", s);
+        subT = sub + s;
+        printf("Su subsidio total por hijos es de: %.2f", subT);
+    }
+    else if(hijos > 5) {
+        sub = 1200 * hijos;
+        printf("Su subsidio por hijos es de: %.2f", sub);
+        for(int i = 0; i < hijos; i++) {
+            int e;
+            printf("\nIngrese la edad de sus hijos:");
+            scanf("%d", &e);
+            if(e >= 6 && e <= 18) {
+                hijosES++;
+            }
+        }
+        s = hijosES * 1000; // Se calcula el subsidio por hijos en edad escolar
+        printf("Su subsidio por hijos en edad escolar es de: %.2f\n", s);
+        subT = sub + s;
+        printf("Su subsidio total por hijos es de: %.2f", subT);
+    }
+    break;
+            
+            
+            }
+    return 0;
+}
