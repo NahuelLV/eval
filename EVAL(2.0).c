@@ -92,17 +92,17 @@ int main() {
     
     //Calculo las cajas de dulce de leche
     int entegrasDdL = cantidadDdL / 6;
-    printf("Total de entregas de cajas de dulce de leche: %d", entegrasDdL);
+    printf("Total de entregas de cajas de dulce de leche: %d\n", entegrasDdL);
     int ddl = entegrasDdL * 6;
     
     //Calculo las cajas de chocolate
     int entegrasCho = cantidadCho / 6;
-    printf("Total de entregas de cajas de dulce de leche: %d", entegrasDdL);
+    printf("Total de entregas de cajas de dulce de leche: %d\n", entegrasDdL);
     int cho = entegrasCho * 6;
     
     //Calculo las cajas de fruta
     int entegrasFr = cantidadFr / 6;
-    printf("Total de entregas de cajas de dulce de leche: %d", entegrasDdL);
+    printf("Total de entregas de cajas de dulce de leche: %d\n", entegrasDdL);
     int fr = entegrasFr * 6;
     
     int cajasindividuales = fr + cho + ddl;
@@ -118,10 +118,10 @@ int main() {
     
     printf("CHOCOLATE|DULCEdeLECHE|FRUTA|MIXTA\n");
     for(int n = 0; n < 4; n++){
-        printf("%d", precio[n]);
+        printf("%2d", precio[n]);
     }
     
-    
+    printf("\n");
     int gananciasCho = entegrasCho * precio[0];
     printf("Las ganancias de las cajas de chocolate son de: %d\n", gananciasCho);
     
@@ -146,10 +146,3 @@ El ejercicio pide un programa para que un jefe/encargardo vea la produccion de s
 Yo lo hice pensando en un seguimiento mensual(Ya que aclara que le interesa saber las ganancias y produccion del ultimo mes), debido a esto hice que solo haya 6 producciones(Una por empleado y estos solo pueden desarrolar un tipo).
 Igualmente el codigo se puede modificar agregando una variable(Por ejemplo "Producciones totales") para que pueda haber repeticion, es decir, que un empleado pueda hacer varias producciones de difentes tipo de alfajor
 */
-
-
-
-
-
-
-
